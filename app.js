@@ -90,7 +90,7 @@ const moreEmployeeQuestions = [
         ]
     }
 ]
-//Creation of new employees 
+//Creation of new employee objects
 async function promptMoreUser() {
     try {
         const answers = await inquirer.prompt(moreEmployeeQuestions);
@@ -101,8 +101,15 @@ async function promptMoreUser() {
         } else {
             //call render, pass array of all emp.
             const teamString = render(employeeTeam);
-            console.log(teamString);
-            //take string from render to write file 
+            
+            console.log(JSON.stringify(employeeTeam));
+            // take string from render to write file 
+            fs.writeFile(outputPath, teamString, function (err) {
+                if (err) {
+                    throw err
+                };
+            });
+
         }
     }
     catch (err) {
@@ -114,9 +121,7 @@ async function createEngineer() {
     try {
         const answers = await inquirer.prompt(engineerQuestions);
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
-        //push new employy to global array 
         employeeTeam.push(engineer);
-        //call promptMoreUser func
         promptMoreUser();
     }
     catch (err) {
@@ -139,11 +144,11 @@ async function createIntern() {
 //init function
 async function init() {
     try {
+        console.log("Please Build your team");
         const answers = await inquirer.prompt(managerQuestions);
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         employeeTeam.push(manager);
         promptMoreUser();
-        // console.log(manager);
     }
 
     catch (err) {

@@ -10,72 +10,111 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 const employeeTeam = [];
+const ids = [];
 
-//Employee questions: manager, engineer, intern & more questions 
+//Validatr functions
+const valueValidator = answer => {
+    if (answer === "") {
+        return "You need to provide an answer";
+    } return true;
+}
+const idValidator = answer => {
+  
+    const newId = answer.trim();
+    if (ids.includes(newId)) {
+        return "Id already taken";
+    }else if (answer === "") {
+        return "You need to provide an answer";
+    } 
+    else {
+        ids.push(newId);
+        return true;
+    } 
+}
+const emailValidator= answer=>{
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(answer)) {
+        return true;
+    }
+    return "Please enter a valid email address.";
+}
+
+//Employee questions: manager, engineer, intern & more employee questions 
 const managerQuestions = [
     {
         type: "input",
         name: "name",
-        message: "What is your manager's name?:"
+        message: "What is your manager's name?:",
+        validate: valueValidator
     },
     {
         type: "input",
         name: "id",
-        message: "What is your manager's id?:"
+        message: "What is your manager's id?:",
+        validate: idValidator
     },
     {
         type: "input",
         name: "email",
-        message: "What is your manager's email?:"
+        message: "What is your manager's email?:",
+        validate: emailValidator
     },
     {
         type: "input",
         name: "officeNumber",
-        message: "What is your manager's office number:"
+        message: "What is your manager's office number:",
+        validate: valueValidator
     }
 ]
 const engineerQuestions = [
     {
         type: "input",
         name: "name",
-        message: "What is your engineer's name?:"
+        message: "What is your engineer's name?:",
+        validate: valueValidator
     },
     {
         type: "input",
         name: "id",
-        message: "What is your engineer's id?:"
+        message: "What is your engineer's id?:",
+        validate: idValidator
     },
     {
         type: "input",
         name: "email",
-        message: "What is your engineer's email?:"
+        message: "What is your engineer's email?:",
+        validate: emailValidator
     },
     {
         type: "input",
         name: "github",
-        message: "What is your engineer's GitHub username?:"
+        message: "What is your engineer's GitHub username?:",
+        validate: valueValidator
     }
 ]
 const internQuestions = [
     {
         type: "input",
         name: "name",
-        message: "What is your intern's name?:"
+        message: "What is your intern's name?:",
+        validate: valueValidator
     },
     {
         type: "input",
         name: "id",
         message: "What is your intern's id?:"
+         // validate: idValidator
     },
     {
         type: "input",
         name: "email",
-        message: "What is your intern's email?:"
+        message: "What is your intern's email?:",
+        validate: emailValidator
     },
     {
         type: "input",
         name: "school",
-        message: "What is your  intern's school?:"
+        message: "What is your  intern's school?:",
+        validate: valueValidator
     }
 ]
 const moreEmployeeQuestions = [
@@ -90,6 +129,7 @@ const moreEmployeeQuestions = [
         ]
     }
 ]
+
 //Creation of new employee objects
 async function promptMoreUser() {
     try {
@@ -99,17 +139,13 @@ async function promptMoreUser() {
         } else if (answers.options === "Intern") {
             createIntern();
         } else {
-            //call render, pass array of all emp.
             const teamString = render(employeeTeam);
-            
-            console.log(JSON.stringify(employeeTeam));
-            // take string from render to write file 
+
             fs.writeFile(outputPath, teamString, function (err) {
                 if (err) {
                     throw err
                 };
             });
-
         }
     }
     catch (err) {
@@ -141,7 +177,6 @@ async function createIntern() {
     }
 }
 
-//init function
 async function init() {
     try {
         console.log("Please Build your team");
@@ -156,5 +191,4 @@ async function init() {
     }
 
 }
-//Initializing here 
 init();

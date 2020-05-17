@@ -101,8 +101,8 @@ const internQuestions = [
     {
         type: "input",
         name: "id",
-        message: "What is your intern's id?:"
-         // validate: idValidator
+        message: "What is your intern's id?:",
+        validate: idValidator
     },
     {
         type: "input",

@@ -24,8 +24,6 @@
   To Use run this app, run the following command:
   
   ```node app.js```
-  
- ![Alt Text](https://media.giphy.com/media/W4Qn1aRVRS5qUOK55C/200w_d.gif)
 
   ## Contributing
   Team will update every time you use this app, new feature to save teams in future plans to improve this app.

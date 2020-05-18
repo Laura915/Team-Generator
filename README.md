@@ -25,7 +25,7 @@
   
   ```node app.js```
   
- ![Gif of Team-Generator app](https://media.giphy.com/media/W4Qn1aRVRS5qUOK55C/source.mp4)
+ ![Alt Text](https://media.giphy.com/media/W4Qn1aRVRS5qUOK55C/source.mp4)
 
   ## Contributing
   Team will update every time you use this app, new feature to save teams in future plans to improve this app.

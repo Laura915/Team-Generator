@@ -1,7 +1,7 @@
 # Team-Generator
 
  ## Description 
-    A command line app that helps team leaders keep track of all member's basic information. 
+  A command line app that helps team leaders keep track of all member's basic information. 
     
  **User Story:** <br>
     As a team leader or manager <br>

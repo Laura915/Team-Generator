@@ -1,7 +1,6 @@
 # Team-Generator
 
  ## Description 
-<<<<<<< HEAD
     A command line app that helps team leaders keep track of all member's basic information. 
     
  **User Story:** <br>
@@ -31,27 +30,11 @@
   To begin using, run the following command:
 
   ```node app.js```
-=======
- User will be able to get a team from a CLI(Command Line Interface) app. User will recieve prompts that will dynamically generate a html page with the chosen team and emplopyee profiles.
-
-  ## Table of Contents
-
-  * [Installation](#installation)
-
-  * [Usage](#usage)
-
-  * [Contributing](#contributing)
-
-  * [Tests](#test)
-
-  * [Questions](#questions)
->>>>>>> e2a84d1ec84371d7dd923450a1462ead2cc71c41
 
   ## Installation
   To install required dependencies, run the following command:
 
   ```npm i```
-<<<<<<< HEAD
   
   ## Test
   To run test, run the following command:
@@ -60,21 +43,3 @@
   
   ## Questions
   If you have a question about this repo, open a issue or contact Laura 915
-=======
-
-  ## Usage
-  To Use run this app, run the following command:
-  
-  ```node app.js```
-
-  ## Contributing
-  Team will update every time you use this app, new feature to save teams in future plans to improve this app.
- 
-  ## Test
-  To run test, run the following command:
-  
-  ```npm run test```
-  
-  ## Questions
-  If you have a question about this repo, open a issue or contact Laura915 
->>>>>>> e2a84d1ec84371d7dd923450a1462ead2cc71c41

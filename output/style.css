@@ -7,4 +7,6 @@
 .card-header{
     background-color: darkcyan;
 }
-
+.card-header{
+    text-align: center;
+}

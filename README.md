@@ -1,14 +1,16 @@
 # Team-Generator
 
+ ### [Team-Generator Demo !](https://youtu.be/sPTlVrgFAl8)
+
  ## Description 
-  A command line app that enables the user to organize team  members' information. 
+  A command line app that enables the user to organize team members' information. 
     
  **User Story:** <br>
     As a team leader or manager <br>
     I want to output a webpage that presents my team's basic information <br>
     so that I have quick access to emails and GitHub profiles
   
-  [<img src="output/img/team-generator-screenShot.png" width="500" height="350" style="text-align:center"/>](output/img/team-generator-screenShot.png)
+  [<img src="output/img/team-gen-screenShot.png" width="500" height="350" style="text-align:center"/>](output/img/team-generator-screenShot.png)
 
   ## Table of Contents
 
@@ -41,7 +43,7 @@
   ```npm i```
   
   ## Build
-  **Tools Used :**  JavaScript Node HTML CSS
+  **Tools Used :**  JavaScript Node.js Inquirer Jest HTML CSS
 
   **Process** </br>
 
